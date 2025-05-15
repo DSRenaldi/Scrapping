@@ -9,7 +9,6 @@
     - `virtualenv .venv`
 
 3. Activate the virtual environment (For windows)
-    - `python -m venv .venv`
     - `.venv\Scripts\activate`
 
 4. Install dependencies
