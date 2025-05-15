@@ -110,12 +110,15 @@ while sessions_completed < MAX_SESSIONS:
                         "comment_likes": comment.likes_count
                     })
 
+                total_comments = len(comments_data)
+
                 append_to_csv(comments_data, OUTPUT_FILE)
                 save_shortcode(shortcode)
                 existing_shortcodes.add(shortcode)
-                log_status(shortcode, len(comments_data), "Sukses")
-                print(f"[SAVE] Komentar dari post {shortcode} disimpan.")
+                log_status(shortcode, total_comments, "Sukses")
+                print(f"[SAVE] Komentar dari post {shortcode} disimpan. Jumlah komentar: {total_comments}")
                 comments_data.clear()
+
 
             except Exception as e:
                 log_status(shortcode, len(comments_data), f"Gagal: {e}")
@@ -128,8 +131,10 @@ while sessions_completed < MAX_SESSIONS:
 
         sessions_completed += 1
         if sessions_completed < MAX_SESSIONS:
-            print(f"\n[PAUSE] Tidur {SESSION_DELAY} detik sebelum sesi berikutnya...\n")
-            time.sleep(SESSION_DELAY)
+            pause_time = random.randint(*SESSION_DELAY)
+            print(f"\n[PAUSE] Tidur {pause_time} detik sebelum sesi berikutnya...\n")
+            time.sleep(pause_time)
+
 
     except StopIteration:
         print("\n✅ Tidak ada lagi postingan yang bisa diambil.")
