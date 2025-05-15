@@ -1,2 +1,5 @@
 /Instagram/dsrenaldi
 .venv
+*.csv
+*.txt
+!/Instagram/requirement.txt
