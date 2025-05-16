@@ -10,7 +10,7 @@ from datetime import datetime
 
 # ========== KONFIGURASI ==========
 USERNAME = "dsrenaldi"
-TARGET_USERNAME = "pdamsuryasembada"
+TARGET_USERNAME = "suryasembpdamada"
 COOKIE_PATH = "C:/Users/rdick/AppData/Roaming/Mozilla/Firefox/Profiles/xcv8f7jy.default-release-1/cookies.sqlite"
 OUTPUT_FILE = f"trial_comments_{TARGET_USERNAME}.csv"
 SHORTCODE_FILE = "shortcode_list.txt"
