@@ -2,5 +2,5 @@
 .venv
 *.csv
 *.txt
-!/Instagram/requirement.txt
+!Instagram/requirements.txt
 Facebook
